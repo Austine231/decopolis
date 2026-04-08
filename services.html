@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Decopolis Enterprises | Our Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fefcf5; color: #1a2e2c; line-height: 1.5; overflow-x: hidden; }
+    :root {
+      --deep-teal: #0a3b3a; --aqua-green: #1f7a6c; --seafoam-light: #d4f3ef;
+      --gold-accent: #d9a13b; --white: #ffffff; --transition-smooth: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    .header-bar { background: white; border-bottom: 1px solid #e9e3d5; padding: 1rem 0; }
+    .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .nav-split { background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e0e6e2; }
+    .nav-container { display: flex; justify-content: center; gap: 2rem; padding: 1rem; flex-wrap: wrap; }
+    .nav-btn {
+      background: transparent; border: none; font-size: 1.2rem; font-weight: 600;
+      padding: 0.7rem 1.8rem; border-radius: 60px; cursor: pointer; text-decoration: none; display: inline-block;
+      font-family: 'Inter', sans-serif; color: #2c5a54; transition: var(--transition-smooth);
+    }
+    .nav-btn i { margin-right: 8px; }
+    .nav-btn:hover { background: var(--seafoam-light); color: var(--deep-teal); transform: translateY(-2px); }
+    .nav-btn.active { background: var(--aqua-green); color: white; box-shadow: 0 8px 16px -6px rgba(31,122,108,0.4); }
+    .section-title {
+      font-size: 2.6rem; font-weight: 700; margin-bottom: 1.2rem; color: var(--deep-teal);
+      position: relative; display: inline-block;
+    }
+    .section-title:after { content: ''; position: absolute; bottom: -12px; left: 0; width: 70px; height: 4px; background: var(--gold-accent); border-radius: 4px; }
+    .badge-green { display: inline-block; background: var(--seafoam-light); padding: 0.2rem 1rem; border-radius: 40px; font-size: 0.75rem; font-weight: 600; color: var(--aqua-green); margin-bottom: 1rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem; }
+    .service-card { background: white; border-radius: 1.5rem; padding: 1.8rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: var(--transition-smooth); }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
+    .service-icon { background: var(--seafoam-light); width: 70px; height: 70px; border-radius: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 2rem; color: var(--aqua-green); transition: 0.2s; }
+    .service-card:hover .service-icon { background: var(--gold-accent); color: white; }
+    footer { background: var(--deep-teal); color: #cfe6e1; padding: 2rem 0; text-align: center; margin-top: 2rem; }
+    @media (max-width: 900px) { .section-title { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="scene">
+            <div class="card">
+                <div class="face front">
+                    <img src="./images/logo images/logo.png" class="logo-img" alt="Logo">
+                </div>
+                <div class="face back">
+                    <div class="slogan-text">Sustainable Fish.<br>Thriving Communities.<br>Healthy Waters.</div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- SERVICES CONTENT -->
+<section style="padding: 3rem 0 5rem 0;">
+  <div class="container">
+    <span class="badge-green"><i class="fas fa-boxes"></i> what we offer</span>
+    <h2 class="section-title">Premium Aquaculture Services</h2>
+    <p style="font-size:1.2rem; margin-bottom:2rem;">From farm to fork — sustainable, traceable, and crafted to meet East Africa’s growing demand for healthy protein.</p>
+
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon"><i class="fas fa-fish"></i></div><h3>Fresh Tilapia</h3><p>Premium quality, hormone-free Tilapia raised in floating cages. Harvested daily, available whole or gutted.</p><div style="margin-top:1rem; font-weight:600; color:var(--gold-accent);">KES 350–450/kg · year-round supply</div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-utensils"></i></div><h3>Value-Added Products</h3><p>Fresh fillets, smoked tilapia, frozen portions. Ideal for restaurants, hotels, and retail chains. Vacuum packaging available.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-seedling"></i></div><h3>Fingerlings Supply</h3><p>Disease-resistant tilapia fingerlings to empower local farmers. Technical guidance provided.</p></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Training & Advisory</h3><p>Workshops on sustainable cage farming, water quality management, climate-resilient practices, and business skills.</p></div>
+    </div>
+
+    <div style="margin-top:3rem; background:#f2f8f5; border-radius:2rem; padding:1.8rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem;">
+      <div><i class="fas fa-truck-fast" style="font-size:1.8rem; color:var(--aqua-green);"></i> <strong>Distribution network:</strong> direct supply to fish markets, supermarkets, hotels, and fish processors in Western Kenya & Nairobi.</div>
+      <div><i class="fas fa-charging-station"></i> <strong>Integrated cold chain</strong> – preserving freshness from harvest to delivery.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem;">
+      <div><i class="fas fa-phone-alt"></i> +254 720 343 244 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> decopolisenterprises@gmail.com</div>
+      <div><i class="fas fa-map-pin"></i> Busia County, Lake Victoria Basin, Kenya</div>
+      <div><i class="fas fa-leaf"></i> Green Business Plan — SDGs | Blue Economy Strategy</div>
+    </div>
+    <hr style="border-color:#2f6b62; margin:1.5rem 0 1rem 0;">
+    <p>© 2025 DECOPOLIS ENTERPRISES LTD — Climate-smart aquaculture for thriving communities & healthy waters.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-6px)'; });
+    card.addEventListener('mouseleave', function() { this.style.transform = ''; });
+  });
+  document.querySelectorAll('footer i').forEach(icon => {
+    icon.addEventListener('mouseenter', () => icon.style.color = '#d9a13b');
+    icon.addEventListener('mouseleave', () => icon.style.color = '#cfe6e1');
+  });
+</script>
+</body>
+</html>
