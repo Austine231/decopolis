@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decopolis Enterprises | Sustainable Fish Farming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional fix for team carousel (keep as is) */
+        .carousel-container {
+            position: relative;
+            min-height: 480px;
+        }
+        .team-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s;
+            text-align: center;
+        }
+        .team-card.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+        .team-card img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+            margin: 0 auto;
+            display: block;
+        }
+        .team-info {
+            background: white;
+            padding: 16px;
+            margin-top: -30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            border-radius: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        /* New styles for added info sections (keep consistent) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+        .info-card {
+            background: white;
+            padding: 28px;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+        .info-card i {
+            font-size: 40px;
+            color: #0b5e7e;
+            margin-bottom: 16px;
+        }
+        .info-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+        .info-card p {
+            color: #4a5568;
+        }
+
+  /* Video grid – 4 columns on desktop, 2 on tablet, 1 on mobile */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .video-wrapper {
+    background: #1e2a3e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .video-wrapper:hover {
+    transform: translateY(-4px);
+  }
+  .responsive-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* Forces all videos to 16:9, cropping if needed */
+    object-fit: cover;      /* Crops extra width/height to fit the box */
+    display: block;
+  }
+  /* Responsive breakpoints */
+  @media (max-width: 900px) {
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 550px) {
+    .video-grid { grid-template-columns: 1fr; }
+  }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="scene">
+            <div class="card">
+                <div class="face front">
+                    <img src="./images/logo images/logo.png" class="logo-img" alt="Logo">
+                </div>
+                <div class="face back">
+                    <div class="slogan-text">Sustainable Fish.<br>Thriving Communities.<br>Healthy Waters.</div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero with 6 fading backgrounds (UNCHANGED) -->
+    <section class="hero">
+        <div class="slideshow-bg" id="heroSlideshow">
+            <div class="slide-bg" style="background-image: url('./images/site images/fishing.jpeg');"></div>
+            <div class="slide-bg" style="background-image: url('./images/site images/fishing2.jpeg');"></div>
+            <div class="slide-bg" style="background-image: url('./images/site images/fishing3.jpeg');"></div>
+            <div class="slide-bg" style="background-image: url('./images/site images/solarpanels.jpeg');"></div>
+            <div class="slide-bg" style="background-image: url('./images/site images/solarproducts.jpeg');"></div>
+            <div class="slide-bg" style="background-image: url('./images/site images/fishing6.jpeg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Sustainable Fish.<br>Thriving Communities.<br>Healthy Waters.</h1>
+            <p>Modern fish cage farming on Lake Victoria, Busia County. Producing 120+ tons of premium Tilapia annually.</p>
+            <a href="contact.html" class="btn btn-primary">Partner with us <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- ===== NEW: SIMPLE INTRODUCTION ===== -->
+    <section class="section" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Welcome to Decopolis Enterprises</h2>
+                <p>Climate‑smart aquaculture for a food‑secure Kenya</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; color: #2d3e50;">
+                <p>We are a registered green aquaculture company operating modern floating fish cages on Lake Victoria, Busia County. Our mission is to produce high‑quality Tilapia using environmentally responsible methods, while creating jobs and supporting the Blue Economy.</p>
+                <p style="margin-top: 16px;"><strong>📊 120+ tons annual production | 🐟 20+ cages in Year 1 | 👥 40+ local jobs</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEW: ABOUT US GLIMPSE ===== -->
+    <section class="section" style="background: #f0f9ff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Driving sustainable change in the Lake Victoria basin</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To produce affordable, high-quality fish through environmentally responsible aquaculture practices that promote food security, economic growth, and ecological sustainability.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become one of East Africa's leading sustainable aquaculture companies within 10 years, driving blue economy growth while protecting aquatic ecosystems.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Why Choose Us</h3>
+                    <p>✓ Consistent year‑round supply<br>✓ Traceable & safe fish<br>✓ Reduced pressure on wild fisheries<br>✓ Aligned with Kenya's Blue Economy Strategy</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="about.html" class="btn btn-primary" style="background: #0b5e7e;">Learn more about us →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEW: PRODUCTS & SERVICES GLIMPSE ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products & Services</h2>
+                <p>What we offer to our partners and community</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-fish"></i>
+                    <h3>Fresh Tilapia</h3>
+                    <p>Premium whole/gutted Tilapia from floating HDPE cages. Sold to fish markets, supermarkets, hotels, and restaurants.</p>
+                    <span class="price-badge" style="display: inline-block; margin-top: 12px;">KES 350–450 / kg</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Processed Fish</h3>
+                    <p>Fillets, smoked fish, frozen portions – value‑added for restaurants, exporters, and long‑term storage.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Fingerlings & Training</h3>
+                    <p>High‑quality Tilapia fingerlings for other farmers, plus aquaculture training workshops on cage farming and sustainable feed management.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="services.html" class="btn btn-primary" style="background: #0b5e7e;">View all services →</a>
+            </div>
+        </div>
+    </section>
+
+<!-- ===== VIDEO SECTION (responsive, handles any size) ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Operations in Action</h2>
+      <p>Watch how we practice sustainable aquaculture</p>
+    </div>
+    <div class="video-grid">
+      <!-- Video 1 -->
+      <div class="video-wrapper">
+        <video class="responsive-video" controls >
+          <source src="./videos/Decopolis/VID-20260406-WA0018.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <!-- Video 2 -->
+      <div class="video-wrapper">
+        <video class="responsive-video" controls >
+          <source src="./videos/Decopolis/VID-20260406-WA0019.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Video 3 -->
+      <div class="video-wrapper">
+        <video class="responsive-video" controls>
+          <source src="./videos/Decopolis/VID-20260406-WA0020.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Video 4 -->
+      <div class="video-wrapper">
+        <video class="responsive-video" controls>
+          <source src="./videos/Decopolis/VID-20260406-WA0021.mp4" type="video/mp4">
+        </video>
+      </div>
+       <!-- Video 5 -->
+      <div class="video-wrapper">
+        <video class="responsive-video" controls>
+          <source src="./videos/Decopolis/VID-20260406-WA0022.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Team Carousel (unchanged) -->
+    <section class="section" style="background: #f0f9ff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Core Team</h2>
+                <p>Click Next to see the team</p>
+            </div>
+            <div class="team-carousel">
+                <div class="carousel-container" id="teamCarousel">
+                    <div class="team-card active">
+                        <img src="./images/team members/founder.jpeg.jpeg" alt="Jane Mwikali">
+                        <div class="team-info">
+                            <p>Founder/Owner</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="./images/team members/operationmanager.jpeg.jpeg" alt="James Otieno">
+                        <div class="team-info">
+                            <p>Operations Manager</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="./images/team members/financemanager.jpeg.jpeg" alt="Dr. Faith Atieno">
+                        <div class="team-info">
+                            <p>Finance Manager</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="./images/team members/marketingmanager.jpeg.jpeg" alt="Marketing Manager">
+                        <div class="team-info">
+                            <p>Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn" id="nextTeamBtn">Next →</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>📍 Busia County, Lake Victoria Basin, Kenya | 📞 +254 720 343 244 | ✉️ decopolisenterprises@gmail.com</p>
+        <p>© 2025 Decopolis Enterprises Limited — Sustainable Aquaculture</p>
+    </div>
+</footer>
+
+<script>
+    // 6-image slideshow (fading)
+    let slides = document.querySelectorAll('.slide-bg');
+    let currentSlide = 0;
+    function showSlide(index) {
+        slides.forEach((s, i) => {
+            s.classList.toggle('active', i === index);
+        });
+    }
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 4000);
+    showSlide(0);
+
+    // Team carousel (next button cycles)
+    const teamCards = document.querySelectorAll('#teamCarousel .team-card');
+    let currentTeam = 0;
+    const nextBtn = document.getElementById('nextTeamBtn');
+    function showTeamCard(index) {
+        teamCards.forEach((card, i) => {
+            card.classList.toggle('active', i === index);
+        });
+    }
+    if (nextBtn && teamCards.length) {
+        nextBtn.addEventListener('click', () => {
+            currentTeam = (currentTeam + 1) % teamCards.length;
+            showTeamCard(currentTeam);
+        });
+    }
+
+    // Mobile menu toggle
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.main-nav');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    }
+
+    // Sticky header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.site-header');
+        if (window.scrollY > 50) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+    });
+</script>
+</body>
+</html>

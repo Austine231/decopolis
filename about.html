@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Decopolis Enterprises | About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fefcf5; color: #1a2e2c; line-height: 1.5; overflow-x: hidden; }
+    :root {
+      --deep-teal: #0a3b3a; --aqua-green: #1f7a6c; --seafoam-light: #d4f3ef;
+      --gold-accent: #d9a13b; --white: #ffffff; --transition-smooth: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    /* Header & Footer Styles */
+    .header-bar {
+      background: white; border-bottom: 1px solid #e9e3d5; padding: 1rem 0;
+    }
+    .header-flex {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .nav-split {
+      background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid #e0e6e2;
+    }
+    .nav-container {
+      display: flex; justify-content: center; gap: 2rem; padding: 1rem; flex-wrap: wrap;
+    }
+    .nav-btn {
+      background: transparent; border: none; font-size: 1.2rem; font-weight: 600;
+      padding: 0.7rem 1.8rem; border-radius: 60px; cursor: pointer;
+      font-family: 'Inter', sans-serif; color: #2c5a54; text-decoration: none; display: inline-block;
+      transition: var(--transition-smooth);
+    }
+    .nav-btn i { margin-right: 8px; }
+    .nav-btn:hover { background: var(--seafoam-light); color: var(--deep-teal); transform: translateY(-2px); }
+    .nav-btn.active { background: var(--aqua-green); color: white; box-shadow: 0 8px 16px -6px rgba(31,122,108,0.4); }
+    /* Page specific */
+    .section-title {
+      font-size: 2.6rem; font-weight: 700; margin-bottom: 1.2rem; color: var(--deep-teal);
+      position: relative; display: inline-block;
+    }
+    .section-title:after {
+      content: ''; position: absolute; bottom: -12px; left: 0; width: 70px; height: 4px;
+      background: var(--gold-accent); border-radius: 4px; transition: width 0.3s;
+    }
+    .badge-green {
+      display: inline-block; background: var(--seafoam-light); padding: 0.2rem 1rem;
+      border-radius: 40px; font-size: 0.75rem; font-weight: 600; color: var(--aqua-green);
+      margin-bottom: 1rem;
+    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .triple-card {
+      background: var(--white); border-radius: 2rem; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      padding: 1.8rem; border: 1px solid rgba(31,122,108,0.15); transition: var(--transition-smooth);
+    }
+    .triple-card:hover { transform: translateY(-8px); box-shadow: 0 25px 35px -12px rgba(10,59,58,0.2); }
+    .slogan {
+      font-style: italic; font-weight: 500; color: var(--gold-accent);
+      border-left: 3px solid var(--gold-accent); padding-left: 1rem; margin: 1rem 0;
+    }
+    footer {
+      background: var(--deep-teal); color: #cfe6e1; padding: 2rem 0; text-align: center; margin-top: 2rem;
+    }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .section-title { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="scene">
+            <div class="card">
+                <div class="face front">
+                    <img src="./images/logo images/logo.png" class="logo-img" alt="Logo">
+                </div>
+                <div class="face back">
+                    <div class="slogan-text">Sustainable Fish.<br>Thriving Communities.<br>Healthy Waters.</div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+<!-- ABOUT CONTENT (full) -->
+<section style="padding: 3rem 0 5rem 0;">
+  <div class="container">
+    <span class="badge-green"><i class="fas fa-fish"></i> climate-smart aquaculture</span>
+    <h2 class="section-title">About Decopolis</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><strong>Decopolis Enterprises Limited</strong> is a sustainable aquaculture enterprise operating along <strong>Lake Victoria in Busia County, Kenya</strong>. We combine modern fish cage farming with responsible environmental stewardship, directly contributing to food security, blue economy growth, and community resilience.</p>
+        <p>Our core business integrates climate-smart floating fish cages, water quality monitoring, low-stocking density ethics, and zero-waste feed management. We produce premium Tilapia and other commercial species while actively reducing pressure on wild fish stocks.</p>
+        <div class="slogan"><i class="fas fa-quote-left"></i> “Sustainable Fish. Thriving Communities. Healthy Waters.”</div>
+        <p><strong>Vision:</strong> To become one of East Africa’s leading sustainable aquaculture companies within 10 years, driving blue economy growth while protecting aquatic ecosystems.</p>
+        <p><strong>Mission:</strong> Produce affordable, high-quality fish through environmentally responsible practices that promote food security, economic growth, and ecological sustainability.</p>
+      </div>
+      <div>
+        <div class="triple-card">
+          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem;">
+            <div style="background:var(--seafoam-light); width:48px; height:48px; border-radius:30px; display:flex; align-items:center; justify-content:center; font-size:1.7rem; color:var(--aqua-green);"><i class="fas fa-chart-line"></i></div>
+            <h3 style="font-size:1.6rem;">Triple Bottom Line</h3>
+          </div>
+          <p><strong>🌱 Planet:</strong> Sustainable cage farming · water quality monitoring · reduced overfishing · responsible feed conversion.</p>
+          <p><strong>👥 People:</strong> Youth & women employment · local fish trader income · training & community uplift.</p>
+          <p><strong>💰 Profit:</strong> Scalable production · value-added fish products · strong regional demand.</p>
+          <div style="margin-top:0.8rem; font-weight:600; color:var(--gold-accent);"><i class="fas fa-check-circle"></i> Aligned with Kenya Blue Economy Strategy & SDGs</div>
+        </div>
+        <div style="margin-top:1.5rem; background:#eef6f2; border-radius:1.5rem; padding:1.2rem;">
+          <i class="fas fa-tint" style="color:var(--aqua-green); margin-right:8px;"></i>
+          <strong>Lake Victoria location:</strong> modern floating cages, cold chain integration, and direct market access to Nairobi, Kisumu & beyond.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem;">
+      <div><i class="fas fa-phone-alt"></i> +254 720 343 244 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> decopolisenterprises@gmail.com</div>
+      <div><i class="fas fa-map-pin"></i> Busia County, Lake Victoria Basin, Kenya</div>
+      <div><i class="fas fa-leaf"></i> Green Business Plan — SDGs | Blue Economy Strategy</div>
+    </div>
+    <hr style="border-color:#2f6b62; margin:1.5rem 0 1rem 0;">
+    <p>© 2025 DECOPOLIS ENTERPRISES LTD — Climate-smart aquaculture for thriving communities & healthy waters.</p>
+  </div>
+</footer>
+
+<!-- Hover effects (same as original) -->
+<script>
+  const allCards = document.querySelectorAll('.triple-card');
+  allCards.forEach(card => {
+    card.addEventListener('mouseenter', () => { if(card.classList.contains('triple-card')) card.style.borderLeft = `4px solid var(--gold-accent)`; });
+    card.addEventListener('mouseleave', () => { card.style.borderLeft = ''; });
+  });
+  // Footer icon hover
+  document.querySelectorAll('footer i').forEach(icon => {
+    icon.addEventListener('mouseenter', () => icon.style.color = '#d9a13b');
+    icon.addEventListener('mouseleave', () => icon.style.color = '#cfe6e1');
+  });
+</script>
+</body>
+</html>

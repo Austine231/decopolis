@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Decopolis Enterprises | Contact Us</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fefcf5 0%, #f5f7f2 100%);
+      color: #1a2e2c;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* color palette */
+    :root {
+      --deep-teal: #0a3b3a;
+      --aqua-green: #1f7a6c;
+      --seafoam-light: #d4f3ef;
+      --gold-accent: #d9a13b;
+      --white: #ffffff;
+      --gray-light: #f8f7f2;
+      --shadow-sm: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 30px 40px -18px rgba(10, 59, 58, 0.25);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header branding */
+    .brand-bar {
+      background: white;
+      border-bottom: 1px solid #e9e3d5;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .brand-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--deep-teal);
+    }
+    .logo span {
+      font-weight: 500;
+      color: #5c7c73;
+    }
+    .tagline {
+      font-size: 0.85rem;
+      background: var(--seafoam-light);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      color: var(--aqua-green);
+    }
+
+    /* contact section */
+    .contact-section {
+      flex: 1;
+      padding: 4rem 0 5rem;
+    }
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--deep-teal);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--gold-accent);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    .section-title:hover:after {
+      width: 100%;
+    }
+    .subhead {
+      color: #4f6f68;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+
+    /* contact cards grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .contact-card {
+      background: var(--white);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(31, 122, 108, 0.12);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--gold-accent);
+    }
+    .icon-wrapper {
+      width: 90px;
+      height: 90px;
+      background: var(--seafoam-light);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2.8rem;
+      color: var(--aqua-green);
+      transition: all 0.25s;
+    }
+    .contact-card:hover .icon-wrapper {
+      background: var(--gold-accent);
+      color: white;
+      transform: scale(1.02);
+    }
+    .contact-card h3 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--deep-teal);
+    }
+    .contact-detail {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c5a54;
+      margin: 0.8rem 0;
+      word-break: break-word;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 2px solid var(--aqua-green);
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      color: var(--aqua-green);
+      margin-top: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .action-btn:hover {
+      background: var(--aqua-green);
+      color: white;
+      border-color: var(--aqua-green);
+    }
+
+    /* ----- ANIMATIONS (ringing, email fly, whatsapp bounce) ----- */
+    @keyframes ring {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(10deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(6deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(2deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .ring-animation {
+      animation: ring 1.2s ease-in-out infinite;
+      transform-origin: center;
+    }
+    /* email fly (gentle floating + paper plane) */
+    @keyframes fly {
+      0% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-6px) rotate(3deg); }
+      75% { transform: translateY(4px) rotate(-2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .fly-animation {
+      animation: fly 1.8s ease-in-out infinite;
+    }
+    /* whatsapp pulse & bounce */
+    @keyframes bounceWp {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); text-shadow: 0 0 3px rgba(37, 211, 102, 0.3); }
+    }
+    .bounce-animation {
+      animation: bounceWp 1s ease infinite;
+    }
+
+    /* extra dynamic shine effect on cards */
+    .contact-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s;
+      pointer-events: none;
+    }
+    .contact-card:hover::after {
+      left: 150%;
+    }
+
+    /* bottom contact form (optional but elegant) */
+    .form-wrapper {
+      margin-top: 4rem;
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e0e9e4;
+    }
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--deep-teal);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .input-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    input, textarea {
+      flex: 1;
+      padding: 1rem;
+      border: 1px solid #cfdfd9;
+      border-radius: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      background: #fefef9;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold-accent);
+      box-shadow: 0 0 0 3px rgba(217, 161, 59, 0.2);
+    }
+    .send-btn {
+      background: var(--aqua-green);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .send-btn:hover {
+      background: var(--deep-teal);
+      transform: scale(1.02);
+    }
+    footer {
+      background: var(--deep-teal);
+      color: #cfe6e1;
+      padding: 1.5rem 0;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 0 1.5rem; }
+      .section-title { font-size: 2rem; }
+      .contact-card h3 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <div class="scene">
+            <div class="card">
+                <div class="face front">
+                    <img src="./images/logo images/logo.png" class="logo-img" alt="Logo">
+                </div>
+                <div class="face back">
+                    <div class="slogan-text">Sustainable Fish.<br>Thriving Communities.<br>Healthy Waters.</div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+<section class="contact-section">
+  <div class="container">
+    <h1 class="section-title">Connect With Us</h1>
+    <p class="subhead">Reach out to our team for fresh Tilapia, partnerships, or aquaculture training — we're one call or click away.</p>
+
+    <!-- 3 contact methods: Call, Email, WhatsApp with animations -->
+    <div class="contact-grid">
+      
+      <!-- PHONE CARD (ringing animation) -->
+      <div class="contact-card" id="phoneCard">
+        <div class="icon-wrapper" id="phoneIcon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <h3>Call Us</h3>
+        <div class="contact-detail">+254 720 343 244</div>
+        <p style="font-size: 0.85rem; color:#5f8b82;">Mon–Sat, 8am – 6pm EAT</p>
+        <a href="tel:+254720343244" class="action-btn"><i class="fas fa-phone"></i> Call Now</a>
+      </div>
+
+      <!-- EMAIL CARD (fly animation) -->
+      <div class="contact-card" id="emailCard">
+        <div class="icon-wrapper" id="emailIcon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email Us</h3>
+        <div class="contact-detail">decopolisenterprises@gmail.com</div>
+        <p style="font-size: 0.85rem; color:#5f8b82;">Response within 24 hours</p>
+        <a href="mailto:decopolisenterprises@gmail.com" class="action-btn"><i class="fas fa-paper-plane"></i> Send Email</a>
+      </div>
+
+      <!-- WHATSAPP CARD (bounce/pulse animation) -->
+      <div class="contact-card" id="whatsappCard">
+        <div class="icon-wrapper" id="whatsappIcon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <h3>WhatsApp</h3>
+        <div class="contact-detail">+254 720 343 244</div>
+        <p style="font-size: 0.85rem; color:#5f8b82;">Chat with sales & support</p>
+        <a href="https://wa.me/254720343244?text=Hello%20Decopolis%20Enterprises%2C%20I%27m%20interested%20in%20your%20sustainable%20fish%20products." target="_blank" class="action-btn"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+      </div>
+    </div>
+
+    <!-- Optional contact form with quick message (consistent with same style) -->
+    <div class="form-wrapper">
+      <div class="form-title">
+        <i class="fas fa-pen-fancy" style="color: var(--gold-accent);"></i> Send a quick message
+      </div>
+      <form id="quickContactForm">
+        <div class="input-group">
+          <input type="text" placeholder="Your name" id="contactName" required>
+          <input type="email" placeholder="Email address" id="contactEmail" required>
+        </div>
+        <textarea rows="3" placeholder="How can we help? (Fish orders, training, partnership...)" id="contactMsg" required></textarea>
+        <div style="margin-top: 1.2rem; text-align: right;">
+          <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </div>
+        <p id="formFeedback" style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--aqua-green);"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.8rem;">
+      <span><i class="fas fa-map-marker-alt"></i> Busia County, Lake Victoria Basin, Kenya</span>
+      <span><i class="fas fa-leaf"></i> Climate-smart aquaculture · Blue Economy</span>
+      <span><i class="fas fa-fish"></i> Sustainable fish. Thriving communities.</span>
+    </div>
+    <hr style="margin: 1rem 0; border-color: #2f6b62;">
+    <p style="font-size: 0.75rem;">&copy; 2025 DECOPOLIS ENTERPRISES LTD — Contact our team for fresh Tilapia, fingerlings & training.</p>
+  </div>
+</footer>
+
+<script>
+  // ========== ANIMATIONS: ringing, fly, bounce on respective icons ==========
+  const phoneIconDiv = document.getElementById('phoneIcon');
+  const emailIconDiv = document.getElementById('emailIcon');
+  const whatsappIconDiv = document.getElementById('whatsappIcon');
+
+  // Add infinite ring animation to phone icon (class ring-animation)
+  if (phoneIconDiv) {
+    phoneIconDiv.classList.add('ring-animation');
+    // also add a subtle hover effect that intensifies ringing
+    phoneIconDiv.addEventListener('mouseenter', () => {
+      phoneIconDiv.style.animation = 'ring 0.7s ease-in-out infinite';
+    });
+    phoneIconDiv.addEventListener('mouseleave', () => {
+      phoneIconDiv.style.animation = 'ring 1.2s ease-in-out infinite';
+    });
+  }
+
+  // Email fly animation
+  if (emailIconDiv) {
+    emailIconDiv.classList.add('fly-animation');
+    // hover adds extra float
+    emailIconDiv.addEventListener('mouseenter', () => {
+      emailIconDiv.style.animation = 'fly 0.8s ease-in-out infinite';
+    });
+    emailIconDiv.addEventListener('mouseleave', () => {
+      emailIconDiv.style.animation = 'fly 1.8s ease-in-out infinite';
+    });
+  }
+
+  // WhatsApp bounce animation (bounce-animation)
+  if (whatsappIconDiv) {
+    whatsappIconDiv.classList.add('bounce-animation');
+    whatsappIconDiv.addEventListener('mouseenter', () => {
+      whatsappIconDiv.style.animation = 'bounceWp 0.5s ease infinite';
+    });
+    whatsappIconDiv.addEventListener('mouseleave', () => {
+      whatsappIconDiv.style.animation = 'bounceWp 1s ease infinite';
+    });
+  }
+
+  // ========== ADDITIONAL DYNAMIC COLOR & SOUND-LIKE VISUAL FEEDBACK ==========
+  // Add a subtle 'ringing' effect on phone card click + console greeting
+  const phoneCard = document.getElementById('phoneCard');
+  if (phoneCard) {
+    phoneCard.addEventListener('click', (e) => {
+      // if click on button link it will redirect anyway; but we add a micro interaction
+      if (e.target.tagName !== 'A') {
+        // visual flash
+        phoneCard.style.backgroundColor = '#fef2e0';
+        setTimeout(() => { phoneCard.style.backgroundColor = ''; }, 200);
+      }
+    });
+  }
+
+  // Email card hover: change icon color temporarily (already in css) extra effect
+  const emailCard = document.getElementById('emailCard');
+  if (emailCard) {
+    emailCard.addEventListener('mouseenter', () => {
+      const envIcon = emailCard.querySelector('.icon-wrapper i');
+      if (envIcon) envIcon.style.transform = 'translateX(3px)';
+    });
+    emailCard.addEventListener('mouseleave', () => {
+      const envIcon = emailCard.querySelector('.icon-wrapper i');
+      if (envIcon) envIcon.style.transform = '';
+    });
+  }
+
+  // WhatsApp: simulate subtle "new message" pulse on hover (extra)
+  const wpCard = document.getElementById('whatsappCard');
+  if (wpCard) {
+    wpCard.addEventListener('mouseenter', () => {
+      const wpIcon = wpCard.querySelector('.icon-wrapper');
+      if (wpIcon) wpIcon.style.filter = 'drop-shadow(0 0 4px #25D366)';
+    });
+    wpCard.addEventListener('mouseleave', () => {
+      const wpIcon = wpCard.querySelector('.icon-wrapper');
+      if (wpIcon) wpIcon.style.filter = '';
+    });
+  }
+
+  // ========== CONTACT FORM HANDLER (simulate send, no actual backend, but interactive) ==========
+  const form = document.getElementById('quickContactForm');
+  const feedback = document.getElementById('formFeedback');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const msg = document.getElementById('contactMsg').value.trim();
+
+    if (!name || !email || !msg) {
+      feedback.style.color = '#d9534f';
+      feedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill in all fields.';
+      setTimeout(() => { if(feedback) feedback.innerHTML = ''; }, 3000);
+      return;
+    }
+    if (!email.includes('@')) {
+      feedback.style.color = '#d9534f';
+      feedback.innerHTML = '<i class="fas fa-envelope"></i> Enter a valid email address.';
+      setTimeout(() => { if(feedback) feedback.innerHTML = ''; }, 3000);
+      return;
+    }
+
+    // simulate success with animation
+    feedback.style.color = '#1f7a6c';
+    feedback.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Our team will reply within 24 hours.';
+    form.reset();
+    setTimeout(() => {
+      if(feedback) feedback.innerHTML = '';
+    }, 4000);
+    
+    // Optional: open email client prepopulated? but better to give a nice toast-like feel
+    // Also provide a subtle animation on form button
+    const btn = form.querySelector('.send-btn');
+    btn.style.transform = 'scale(0.97)';
+    setTimeout(() => { btn.style.transform = ''; }, 150);
+  });
+
+  // ========== EXTRA RINGING SOUND VISUAL (simulated without audio) ==========
+  // create a periodic glow effect on phone icon to mimic "incoming call"
+  setInterval(() => {
+    const phoneWrapper = document.getElementById('phoneIcon');
+    if (phoneWrapper && document.hasFocus()) {
+      // gentle glow every 8 seconds only if page visible
+      phoneWrapper.style.transition = 'box-shadow 0.2s';
+      phoneWrapper.style.boxShadow = '0 0 0 2px rgba(217, 161, 59, 0.4)';
+      setTimeout(() => {
+        if (phoneWrapper) phoneWrapper.style.boxShadow = '';
+      }, 600);
+    }
+  }, 8000);
+  
+  // ========== DYNAMIC HOVER SOUND-LIKE EFFECTS (ripple) ==========
+  const allCards = document.querySelectorAll('.contact-card');
+  allCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Ripple effect for better interactivity
+      const ripple = document.createElement('span');
+      ripple.style.position = 'absolute';
+      ripple.style.borderRadius = '50%';
+      ripple.style.backgroundColor = 'rgba(217, 161, 59, 0.3)';
+      ripple.style.pointerEvents = 'none';
+      ripple.style.width = '20px';
+      ripple.style.height = '20px';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'transform 0.4s, opacity 0.4s';
+      const rect = card.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = `${size}px`;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      ripple.style.left = `${mouseX - size/2}px`;
+      ripple.style.top = `${mouseY - size/2}px`;
+      ripple.style.position = 'absolute';
+      card.style.overflow = 'hidden';
+      card.appendChild(ripple);
+      setTimeout(() => {
+        ripple.style.transform = 'scale(3)';
+        ripple.style.opacity = '0';
+      }, 10);
+      setTimeout(() => ripple.remove(), 400);
+    });
+  });
+
+  // Interactive console welcome
+  console.log('Decopolis Contact Page | Ringing, flying & bouncing animations active — feel free to call or WhatsApp!');
+  
+  // additional hover animation for send button
+  const sendBtn = document.querySelector('.send-btn');
+  if (sendBtn) {
+    sendBtn.addEventListener('mouseenter', () => {
+      sendBtn.style.background = '#0a3b3a';
+    });
+    sendBtn.addEventListener('mouseleave', () => {
+      sendBtn.style.background = 'var(--aqua-green)';
+    });
+  }
+
+  // tooltip / dynamic status for whatsapp link
+  const wpLink = document.querySelector('#whatsappCard .action-btn');
+  if (wpLink) {
+    wpLink.addEventListener('click', () => {
+      // just small feedback on console, but no intrusive
+      console.log('Redirecting to WhatsApp chat with Decopolis Enterprises');
+    });
+  }
+</script>
+</body>
+</html>
